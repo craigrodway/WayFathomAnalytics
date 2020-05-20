@@ -13,6 +13,8 @@ If you appreciate this module and are new to Fathom, [please consider signing up
 
 Fathom Analytics is a simple, privacy-focused website analytics tool for bloggers and businesses.
 
+![Screenshot: Fathom Analytics Dashboard](https://www.dropbox.com/s/ci26z4btswc84zj/fathom-analytics.png?dl=0&raw=1)
+
 Stop scrolling through pages of reports and collecting gobs of personal data about your visitors, both of which you probably don't need. Fathom is a simple and private website analytics platform that lets you focus on what's important: your business.
 
 Major features of Fathom Analytics include:
