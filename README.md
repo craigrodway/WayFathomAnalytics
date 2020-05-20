@@ -115,7 +115,7 @@ You can find out more about the different options on the [Fathom documentation p
 
 #### Automatic embed code
 
-If you want to automatically add the tracking code to front-end pages, enable this option. It will added just before the closing `</head>` tag.
+If you want to automatically add the tracking code to front-end pages, enable this option. It will be added just before the closing `</head>` tag.
 
 #### Honour Do Not Track (DNT)
 
