@@ -23,7 +23,7 @@ class MarkupWayFathomAnalytics extends WireData implements Module
 	{
 		return [
 			'title' => "MarkupWayFathomAnalytics",
-			'version' => "0.0.1",
+			'version' => "0.0.2",
 			'summary' => 'Markup module for WayFathomAnalytics to generate the tracking code.',
 
 			'author' => "Craig A Rodway",
