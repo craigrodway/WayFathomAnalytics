@@ -105,7 +105,9 @@ class MarkupWayFathomAnalytics extends WireData implements Module
 	{
 		$config = $this->getConfig($options);
 
-		$customDomain = $this->sanitizer->text_entities($config->customDomain);
+		$customDomain = $config->customDomain;
+		$customDomain = $this->sanitizer->text($customDomain);
+		$customDomain = $this->sanitizer->entities($customDomain);
 
 		if (strlen($customDomain)) {
 			$host = str_replace(['http://', 'https://', '/'], '', $customDomain);
@@ -175,11 +177,13 @@ class MarkupWayFathomAnalytics extends WireData implements Module
 					$items = explode("\n", $value);
 					$items = array_filter($items, 'trim');
 					$value = implode(',', $items);
-					$value = $this->sanitizer->textarea_entities($value);
+					$value = $this->sanitizer->textarea($value);
+					$value = $this->sanitizer->entities($value);
 				break;
 
 				default:
-					$value = $this->sanitizer->text_entities($value);
+					$value = $this->sanitizer->text($value);
+					$value = $this->sanitizer->entities($value);
 			}
 
 			if (strlen($value)) {
@@ -205,18 +209,12 @@ class MarkupWayFathomAnalytics extends WireData implements Module
 	 */
 	private function getConfig(array $options = [])
 	{
-		$wayFathom = $this->modules->get('WayFathomAnalytics');
 		$defaults = WayFathomAnalytics::getDefaults();
-
-		$config = [];
-
-		foreach ($defaults as $k => $v) {
-			// Get initial value, as configured, from the WayFathomAnalytics module
-			$config[$k] = $wayFathom->{$k};
-		}
+		$moduleConfig = $this->modules->getConfig('WayFathomAnalytics');
 
 		$data = new WireArray();
-		$data->setArray(array_merge($config, $options));
+		$data->setArray(array_merge($defaults, $moduleConfig, $options));
+
 		return $data;
 	}
 
