@@ -24,7 +24,7 @@ class WayFathomAnalytics extends WireData implements Module, ConfigurableModule
 	{
 		return [
 			'title' => 'WayFathomAnalytics',
-			'version' => '0.0.2',
+			'version' => '0.0.3',
 			'summary' => __('Fathom Analytics for ProcessWire. Display your Fathom dashboard in the PW admin panel and easily generate markup for the tracking code.'),
 			'author' => 'Craig A Rodway',
 			'href' => 'https://github.com/craigrodway/WayFathomAnalytics',
