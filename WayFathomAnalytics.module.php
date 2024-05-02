@@ -147,7 +147,7 @@ class WayFathomAnalytics extends WireData implements Module, ConfigurableModule
 	}
 
 
-	private function getEmbedConfig(array $data)
+	private static function getEmbedConfig(array $data)
 	{
 		$modules = wire('modules');
 
